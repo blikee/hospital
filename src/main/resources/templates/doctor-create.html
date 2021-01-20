@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Добавление доктора</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+            <form action="#" th:action="@{/doctors/create}" th:object="${doctor}" method="post">
+                <label for="name">Имя</label>
+                <input type="text" th:field="*{name}" id="name" >
+                <label for="lastname">Фамилия</label>
+                <input type="text" th:field="*{lastname}" id="lastname" >
+                <label for="dadname">Отчество</label>
+                <input type="text" th:field="*{dadname}" id="dadname" >
+                <label for="specialize">Специализация</label>
+                <input type="text" th:field="*{specialize}" id="phone" >
+                <input type="submit" value="Принять">
+            </form>
+        
+    </body>
+</html>

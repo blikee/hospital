@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Редактирование пациента</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form action="#" th:action="@{/patients/edit}" th:object="${patient}" method="post">
+            <label for="id">id</label>
+            <input readonly type="number" th:field="*{id}" id="id"> 
+            <label for="name">Имя</label>
+            <input type="text" th:field="*{name}" id="name">
+            <label for="lastname">Фамилия</label>
+            <input type="text" th:field="*{lastname}" id="lastname">
+            <label for="dadname">Отчество</label>
+            <input type="text" th:field="*{dadname}" id="dadname" >
+            <label for="phone">Телефон</label>
+            <input type="number" th:field="*{phone}" id="phone">
+            <input type="submit" value="Сохранить">
+        </form>   
+    </body>
+</html>

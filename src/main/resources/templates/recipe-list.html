@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Список рецептов</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p><a href="/recipes/create">Добавить рецепт</a></p>
+        <table align="center">
+            <thead>
+                <tr>
+                    <td>Описание</td>
+                    <td>Пациент</td>
+                    <td>Доктор</td>
+                    <td>Дата создания</td>
+                    <td>Срок действия</td>
+                    <td>Приоритет</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="recipe : ${recipes}">
+                    <td th:text="${recipe.description}"></td>
+                    <td th:text="${recipe.patient.lastname}"></td>
+                    <td th:text="${recipe.doctor.lastname}"></td>
+                    <td th:text="${recipe.createdate}"></td>
+                    <td th:text="${recipe.validity}"></td>
+                    <td th:text="${recipe.priority}"></td>
+                    <td><a th:href="@{/recipes/{id}/update(id=${recipe.id})}">изменить</a></td>
+                    <td><a th:href="@{/recipes/{id}/delete(id=${recipe.id})}">удалить</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

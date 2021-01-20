@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Изменить</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+            <form action="#" th:action="@{/doctors/update}" th:object="${doctor}" method="post">
+                <label>ID</label>
+                <input type="text" th:field="*{id}" >
+                <label>Имя</label>
+                <input type="text" th:field="*{name}" >
+                <label>Фамилия</label>
+                <input type="text" th:field="*{lastname}" >
+                <label>Отчество</label>
+                <input type="text" th:field="*{dadname}" >
+                <label>Специализация</label>
+                <input type="text" th:field="*{specialize}" >
+                <input type="submit" value="Принять">
+            </form>
+        
+    </body>
+</html>

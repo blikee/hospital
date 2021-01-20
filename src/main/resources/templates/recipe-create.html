@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Новый рецепт</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="#" th:action="@{/recipes/create}" th:object="${recipe}" method="post">
+            <label>Описание</label>
+            <input type="text" th:field="*{description}">
+           
+            <label>номер пациента</label>
+            <input type="text" th:field="*{patient}">
+            
+            <label>номер доктора</label>
+            <input type="text" th:field="*{doctor}">
+            
+            <label>Дата создания</label>
+            <input type="text" th:field="*{createdate}">
+            <label>Срок действия</label>
+            <input type="text" th:field="*{validity}">
+            <label>Приоритет</label>
+            <input type="text" th:field="*{priority}">
+            <input type="submit" value="Принять">
+        </form>
+        <table>
+    <tr>
+        <td>Доктор и номер</td>
+        
+    </tr>
+    <tr th:each="s1 : ${s1}">
+        <td th:text="${s1.lastname}"></td>
+        <td th:text="${s1.id}"></td>
+        </tr>
+    </table>
+        <table>
+            <tr>
+            <td>Пациент и номер</td>
+            </tr>
+            <tr th:each="s2 : ${s2}">
+                <td th:text="${s2.lastname}"></td>
+                <td th:text="${s2.id}"></td>
+            </tr>
+        </table>
+    </body>
+</html>

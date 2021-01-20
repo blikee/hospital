@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Редактирование рецепта</title>
+        <meta charset="UTF-8">
+        
+    </head>
+    <body>
+       
+        <form action="#" th:action="@{/recipes/update}" th:object="${recipe}" method="post">
+            <label for="id">id</label>
+            <input  type="text" th:field="*{id}"> 
+            
+            <label>Описание</label>
+            <input type="text" th:field="*{description}">
+           
+            <label>номер пациента</label>
+            <input type="text" th:field="*{patient}">
+            
+            <label>номер доктора</label>
+            <input type="text" th:field="*{doctor}">
+            
+            <label>Дата создания</label>
+            <input type="text" th:field="*{createdate}">
+            <label>Срок действия</label>
+            <input type="text" th:field="*{validity}">
+            <label>Приоритет</label>
+            <input type="text" th:field="*{priority}">
+            <input type="submit" value="Принять">
+        </form>   
+    
+    </body>
+</html>

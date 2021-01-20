@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Добавление пациента</title>
+        <meta charset="UTF-8">
+       
+    </head>
+    <body>
+        <form action="#" th:action="@{/patients/create}" th:object="${patient}" method="post">  
+            <label for="tname">Имя</label>
+            <input type="text" th:field="*{name}" id="firstname" placeholder="Ваше имя"><br>
+            <label for="lastname">Фамилия</label>
+            <input type="text" th:field="*{lastname}" id="lastname" placeholder="Ваша фамилия"><br>
+            <label for="dadname">Отчество</label>
+            <input type="text" th:field="*{dadname}" id="dadname" ><br>
+            <label for="phone">Телефон</label>
+            <input type="number" th:field="*{phone}" id="phone"><br>
+            <input type="submit" value="Добавить">
+            
+        </form>
+    </body>
+</html>

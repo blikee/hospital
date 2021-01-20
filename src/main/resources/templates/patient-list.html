@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Список пациентов</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div>
+            <p><a href="/patients/create">Добавить пациента</a></p>
+    <table align = "center">
+        <thead>
+            <tr>
+                <td>Имя</td>
+                <td>Фамилия</td>
+                <td>Отчество</td>
+                <td>Телефон</td>
+                
+            </tr>
+        </thead>
+        <tbody>
+        <tr th:each="patient : ${patients1}">
+            <td th:text="${patient.name}"></td>
+            <td th:text="${patient.lastname}"></td>
+            <td th:text="${patient.dadname}"></td>
+            <td th:text="${patient.phone}"></td>
+            
+            <td><a th:href="@{patients/{id}/edit(id=${patient.id})}">Изменить</a></td>
+            <td><a th:href="@{patients/{id}/remove(id=${patient.id})}">Удалить</a></td>
+        </tr>
+        </tbody>
+    </table> 
+        
+    </body>
+</div>
+</html>

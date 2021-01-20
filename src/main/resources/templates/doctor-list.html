@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Список докторов</title>
+        <meta charset="UTF-8">
+        
+    </head>
+    <body>
+        <p><a href="/doctors/create">Добавить доктора</a></p>
+        <table align="center">
+            <thead>
+                <tr>
+                    <td>Имя</td>
+                    <td>Фамилия</td>
+                    <td>Отчество</td>
+                    <td>Специализация</td>
+                    <td>Кол-во рецептов</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="doctor : ${doctors}">
+                    <td th:text="${doctor.name}"></td>
+                    <td th:text="${doctor.lastname}"></td>
+                    <td th:text="${doctor.dadname}"></td>
+                    <td th:text="${doctor.specialize}"></td>
+                    <td th:text="${#lists.size(doctor.recipe)}"></td>
+                    <td><a th:href="@{doctors/{id}/update(id=${doctor.id})}">Изменить</a></td>
+                    <td><a th:href="@{doctors/{id}/delete(id=${doctor.id})}">Удалить</a></td>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+CREATE TABLE patient(
+id       INT     NOT NULL AUTO_INCREMENT PRIMARY KEY,
+имя VARCHAR(15) NOT NULL,
+фамилия VARCHAR(15) NOT NULL,
+отчество VARCHAR(15) NOT NULL,
+телефон INT NOT NULL
+)
+ENGINE = InnoDB;
+
+CREATE TABLE doctor(
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+имя VARCHAR(15) NOT NULL,
+фамилия VARCHAR(15) NOT NULL,
+отчество VARCHAR(15) NOT NULL,
+специализация VARCHAR(15) NOT NULL
+)
+ENGINE = InnoDB;
+
+CREATE TABLE recipe(
+id  INT     NOT NULL AUTO_INCREMENT PRIMARY KEY,
+описание VARCHAR(500) NOT NULL,
+дата_создания INT NOT NULL,
+срок_действия INT NOT NULL,
+приоритет VARCHAR(15) NOT NULL,
+doctorid INT, FOREIGN KEY(doctorid) REFERENCES doctor(id),
+patientid INT, FOREIGN KEY(patientid) REFERENCES patient(id)
+)
+ENGINE = InnoDB;
