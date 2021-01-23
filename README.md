@@ -1,1 +1,1 @@
-CRUD project with spring boot, data, thymeleaf
+CRUD project with spring boot, data, thymeleaf,mysql
